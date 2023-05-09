@@ -6,4 +6,5 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('edit/<int:user_id>', views.edit, name='edit'),
 ]
