@@ -5,5 +5,7 @@ RUN mkdir /dockerTest
 COPY . /dockerTest
 WORKDIR /dockerTest
 
+EXPOSE $PORT
+
 RUN python -m pip install -r requirements.txt
 RUN python manage.py migrate 
