@@ -1,8 +1,16 @@
 {% load static %}
 
-<h1>{{ user.firstName }}</h1>
-<h3>{{ user.lastName }}</h3>
-<img src="{% static 'helloworld.png' %}">
-<p>{{ user.email }}</p>
-<p>{{ user.interests }}</p>
-<a href="{% url 'core:edit' user.id %}">edit</a>
+<a href="{% url 'core:new_user' %}">Add user</a>
+<a href="{% url 'core:list' %}">Users</a>
+<h1>Top User: </h1>
+<hr>
+{% if user %}
+    <h2>{{ user.firstName }}</h2>
+    <h5>{{ user.lastName }}</h5>
+    <img src="{% static 'helloworld.png' %}">
+    <p>{{ user.email }}</p>
+    <p>{{ user.interests }}</p>
+    <a href="{% url 'core:edit' user.id %}">edit</a>
+{% else %}
+    <p>No user data available!</p>
+{% endif %}

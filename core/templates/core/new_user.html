@@ -1,0 +1,8 @@
+<a href="{% url 'core:index' %}">back</a>
+<hr>
+<form method="POST" action="{% url 'core:new_user' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name=submit>Submit</button>
+    <input type="hidden" name="next" value="{% url 'core:index' %}">
+</form>

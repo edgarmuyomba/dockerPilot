@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-dmiq4i8zsd+3ie0l$(f-tpri3&c6glpj5d95el^)l)x%6t#-l*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,6 +76,15 @@ WSGI_APPLICATION = 'dockerTest.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'dockertest',
+    #     'USER': 'root',
+    #     'PASSWORD': 'muyomba',
+    #     'HOST': 'localhost',
+    #     'PORT': '3307',
+    # }
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
